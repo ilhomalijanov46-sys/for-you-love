@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: url("/background.jpg") center / cover no-repeat fixed;
+    overflow: hidden;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.text {
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.4;
+    opacity: 0;
+    transition: opacity 1s;
+}
