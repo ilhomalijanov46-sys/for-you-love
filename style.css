@@ -5,10 +5,12 @@
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
 }
 
+/* обязательно для iPhone */
 html,
 body {
     width: 100%;
     height: 100%;
+    background: black;
 }
 
 body {
@@ -19,26 +21,32 @@ body {
     overflow: hidden;
 }
 
+/* слой затемнения + blur */
 .overlay {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.35);
 
-    /* ВАЖНО ДЛЯ iPhone */
+    /* iOS Safari */
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
 }
 
+/* контейнер с учётом Safe Area */
 .container {
     position: relative;
     z-index: 1;
-    height: 100%;
+    min-height: 100vh;
+
+    padding:
+        env(safe-area-inset-top) 24px env(safe-area-inset-bottom) 24px;
+
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 24px;
+    justify-content: center;
 }
 
+/* текст */
 .text {
     color: #ffffff;
     font-size: 26px;
